@@ -1,9 +1,9 @@
-import { CountryISO } from 'projects/ngx-intl-tel-input/src/lib/enums/country-iso.enum';
-import { SearchCountryField } from 'projects/ngx-intl-tel-input/src/lib/enums/search-country-field.enum';
-
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { PhoneNumberFormat } from 'projects/ngx-intl-tel-input/src/public_api';
+import { SearchCountryField } from '../../projects/ngx-input-tel-intl/src/lib/model/search-country-field.enum';
+import { CountryISO } from '../../projects/ngx-input-tel-intl/src/lib/model/country-iso.enum';
+import { PhoneNumberFormat } from '../../projects/ngx-input-tel-intl/src/lib/model/phone-number-format.enum';
+
 
 @Component({
 	selector: 'app-root',
@@ -11,19 +11,17 @@ import { PhoneNumberFormat } from 'projects/ngx-intl-tel-input/src/public_api';
 	styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-	separateDialCode = false;
+	separateDialCode = true;
 	SearchCountryField = SearchCountryField;
 	CountryISO = CountryISO;
 	PhoneNumberFormat = PhoneNumberFormat;
-	preferredCountries: CountryISO[] = [
-		CountryISO.UnitedStates,
-		CountryISO.UnitedKingdom,
-	];
-	phoneForm = new FormGroup({
-		phone: new FormControl(undefined, [Validators.required]),
+  favoriteCountries: CountryISO[] = [ CountryISO.FrenchPolynesia ];
+
+  phoneForm = new FormGroup({
+    phone: new FormControl({ value: '+68940414141', disabled: false }, [ Validators.required ]),
 	});
 
 	changePreferredCountries() {
-		this.preferredCountries = [CountryISO.India, CountryISO.Canada];
+		this.favoriteCountries = [CountryISO.India, CountryISO.Canada];
 	}
 }

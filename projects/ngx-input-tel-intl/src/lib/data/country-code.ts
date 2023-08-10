@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { CountryISO } from '../enums/country-iso.enum';
+import { CountryISO } from '../model/country-iso.enum';
 
 @Injectable()
 export class CountryCode {

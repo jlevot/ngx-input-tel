@@ -1,0 +1,36 @@
+<div class="input-group mb-3">
+  <button class="btn btn-outline-secondary dropdown-toggle d-flex align-items-center" type="button"
+          data-bs-toggle="dropdown" aria-expanded="false" [disabled]="phoneNumberControl.disabled">
+    <div [ngClass]="selectedCountry().flagClass" class="me-1"></div>
+    <span class="ms-2" *ngIf="separateDialCode">{{selectedCountry().dialCode | dialCode}}</span>
+  </button>
+  <ul class="dropdown-menu scrollable-menu" #countryList>
+    <li *ngIf="searchCountryFlag && searchCountryField" class="mb-2">
+      <input #searchQuery id="country-search-box" class="form-control" (input)="onSearchUpdated(searchQuery.value)"
+             [placeholder]="searchCountryPlaceholder" autofocus title="Search country">
+    </li>
+    <li class="dropdown-item" *ngFor="let country of (countries$ | async) | filter: 'isFavorite': true"
+        [id]="country.htmlId + '-preferred'">
+      <ng-template *ngTemplateOutlet="countryRow; context: { $implicit: country }"></ng-template>
+    </li>
+    <li *ngIf="favoriteCountries.length">
+      <hr class="dropdown-divider">
+    </li>
+    <li class="dropdown-item" *ngFor="let country of (countries$ | async) | filter: 'isFavorite': false"
+        [id]="country.htmlId">
+      <ng-template *ngTemplateOutlet="countryRow; context: { $implicit: country }"></ng-template>
+    </li>
+  </ul>
+  <input class="form-control" type="tel" [id]="inputId" autocomplete="off" (blur)="onTouched()"
+         [placeholder]="this.selectedCountry().placeHolder" [formControl]="phoneNumberControl"
+         (keypress)="onInputKeyPress($event)" [attr.maxLength]="maxLength" [attr.validation]="phoneValidation"
+         #focusable title="Phone Number">
+</div>
+
+<ng-template #countryRow let-country>
+  <div class="d-flex align-items-center" (click)="onCountrySelect(country, focusable)">
+    <div id="flag" [ngClass]="country.flagClass" class="me-1"></div>
+    <span id="name">{{ country.name }}</span>
+    <span id="dialcode">{{ country.dialCode | dialCode }}</span>
+  </div>
+</ng-template>
