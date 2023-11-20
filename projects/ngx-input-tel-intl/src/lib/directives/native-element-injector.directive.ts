@@ -10,7 +10,6 @@ https://github.com/angular/angular/issues/18025
 https://stackoverflow.com/a/54075119/1617590
 */
 @Directive({
-    // tslint:disable-next-line: directive-selector
     selector: '[ngModel], [formControl], [formControlName]',
 })
 export class NativeElementInjectorDirective implements OnInit {
@@ -19,6 +18,6 @@ export class NativeElementInjectorDirective implements OnInit {
 
     ngOnInit() {
         //@ts-ignore
-        if(this.controlDir.control) this.controlDir.control['nativeElement'] = this.host.nativeElement
+        if( this.controlDir.control ) this.controlDir.control['nativeElement'] = this.host.nativeElement
     }
 }
