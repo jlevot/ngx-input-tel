@@ -5,17 +5,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { NgxInputTelIntlModule } from '../../projects/ngx-input-tel-intl/src/lib/ngx-input-tel-intl.module';
+import { NgxInputTelIntlComponent } from "../../projects/ngx-input-tel-intl/src/lib/ngx-input-tel-intl.component";
 
 @NgModule({
-	declarations: [AppComponent],
-	imports: [
-		BrowserModule,
-		FormsModule,
-		ReactiveFormsModule,
-		NgxInputTelIntlModule,
-		BrowserAnimationsModule
-	],
-	providers: [],
-	bootstrap: [AppComponent],
+    declarations: [ AppComponent ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        ReactiveFormsModule,
+        NgxInputTelIntlModule,
+        BrowserAnimationsModule
+    ],
+    exports: [ NgxInputTelIntlComponent ],
+    providers: [],
+    bootstrap: [ AppComponent ],
 })
-export class AppModule {}
+export class AppModule {
+}

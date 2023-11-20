@@ -1,36 +1,36 @@
 {
-  "name": "ngx-input-tel-intl",
-  "version": "0.0.15",
-  "peerDependencies": {
-    "@angular/common": "^16.2.0",
-    "@angular/core": "^16.2.0",
-    "@angular/forms": "^16.2.0",
-    "google-libphonenumber": "^3.2.3",
-    "ngx-bootstrap": ">= 6.0.0"
-  },
-  "dependencies": {
-    "tslib": "^2.3.0"
-  },
-  "devDependencies": {
-    "@types/google-libphonenumber": "^7.4.24"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jlevot/ngx-input-tel.git"
-  },
-  "bugs": {
-    "url": "https://github.com/jlevot/ngx-input-tel/issues"
-  },
-  "homepage": "https://github.com/jlevot/ngx-input-tel#readme",
-  "author": {
-    "name": "jlevot",
-    "email": "levotjeanbaptiste@gmail.com"
-  },
-  "keywords": [
-    "angular",
-    "angular 16",
-    "intl-tel-input",
-    "phone number",
-    "validation"
-  ]
+    "name": "ngx-input-tel-intl",
+    "version": "0.0.15",
+    "peerDependencies": {
+        "@angular/common": "^16.2.0",
+        "@angular/core": "^16.2.0",
+        "@angular/forms": "^16.2.0",
+        "google-libphonenumber": "^3.2.33",
+        "ngx-bootstrap": ">= 6.0.0"
+    },
+    "dependencies": {
+        "tslib": "^2.3.0"
+    },
+    "devDependencies": {
+        "@types/google-libphonenumber": "^7.4.24"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jlevot/ngx-input-tel.git"
+    },
+    "bugs": {
+        "url": "https://github.com/jlevot/ngx-input-tel/issues"
+    },
+    "homepage": "https://github.com/jlevot/ngx-input-tel#readme",
+    "author": {
+        "name": "jlevot",
+        "email": "levotjeanbaptiste@gmail.com"
+    },
+    "keywords": [
+        "angular",
+        "angular 16",
+        "intl-tel-input",
+        "phone number",
+        "validation"
+    ]
 }

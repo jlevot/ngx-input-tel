@@ -12,14 +12,9 @@ import { DialCodePipe } from './pipe/dialCode.pipe';
 export const dropdownModuleForRoot: ModuleWithProviders<BsDropdownModule> = BsDropdownModule.forRoot();
 
 @NgModule({
-  declarations: [ NgxInputTelIntlComponent, NativeElementInjectorDirective, FilterPipe, DialCodePipe ],
-	imports: [
-		CommonModule,
-		FormsModule,
-    ReactiveFormsModule,
-    dropdownModuleForRoot
-  ],
-	exports: [NgxInputTelIntlComponent, NativeElementInjectorDirective],
+    declarations: [ NgxInputTelIntlComponent, NativeElementInjectorDirective, FilterPipe, DialCodePipe ],
+    imports: [ CommonModule, FormsModule, ReactiveFormsModule, dropdownModuleForRoot ],
+    exports: [ NgxInputTelIntlComponent, NativeElementInjectorDirective ],
 })
 export class NgxInputTelIntlModule {
 }

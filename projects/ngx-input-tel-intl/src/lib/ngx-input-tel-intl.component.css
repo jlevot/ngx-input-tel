@@ -1,1 +1,16 @@
-.scrollable-menu {max-height: 280px; overflow-y: auto;}
+.scrollable-menu {
+    max-height: 280px;
+    overflow-y: auto;
+}
+
+#country-search-box-2 {
+    border: none;
+
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+button {
+    border: var(--bs-border-width) solid var(--bs-border-color);
+}
